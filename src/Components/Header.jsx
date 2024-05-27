@@ -3,7 +3,7 @@ import { TbBrandYoutubeFilled } from "react-icons/tb";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center ">
       <h1 className="text-2xl font-bold">Logo</h1>
       <ul className="flex gap-4 md:gap-14">
         <li className="hover:font-bold cursor-pointer">Home</li>
