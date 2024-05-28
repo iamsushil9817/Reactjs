@@ -39,55 +39,60 @@ const Form = () => {
 
   return (
     <form
-      className="flex  justify-center mt-5 mb-56"
+      className="flex flex-col items-center mx-auto w-[50%] bg-slate-600 text-white rounded-md  mt-4 "
       onSubmit={(e) => handlesubmit(e)}
     >
-      <div>
-        <label htmlFor="title">TItle</label>
+      <div className="m-2">
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
           onChange={(e) => handlechange(e)}
           value={data.title}
+          className="border-solid  border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <div>
-        <label htmlFor="price">Price</label>
+      <div className="m-2">
+        <label htmlFor="price">Price:</label>
         <input
           type="text"
           id="price"
           onChange={(e) => handlechange(e)}
           value={data.price}
+          className="border-solid border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <div>
-        <label htmlFor="description">description</label>
+      <div className="m-2">
+        <label htmlFor="description">Description:</label>
         <input
           type="text"
           id="description"
           onChange={(e) => handlechange(e)}
           value={data.description}
+          className="border-solid border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <div>
-        <label htmlFor="image">image</label>
+      <div className="m-2">
+        <label htmlFor="image">Image:</label>
         <input
           type="text"
           id="image"
           onChange={(e) => handlechange(e)}
           value={data.image}
+          className="border-solid border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <div>
-        <label htmlFor="category">category</label>
+      <div className="m-2">
+        <label htmlFor="category">Category:</label>
         <input
           type="text"
           id="category"
           onChange={(e) => handlechange(e)}
           value={data.category}
+          className="border-solid border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <button className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-500">
+      <button className=" bg-blue-600 text-white p-2 rounded-md hover:bg-blue-500 w-[10%] mb-2 ml-6">
         submit
       </button>
     </form>
