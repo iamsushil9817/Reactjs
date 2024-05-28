@@ -10,7 +10,7 @@ const Header = (props) => {
         <Link to={"/"} className="hover:font-bold cursor-pointer">
           {props.titleone}
         </Link>
-        <Link to={"/about"} className="hover:font-bold cursor-pointer">
+        <Link to={"/sign"} className="hover:font-bold cursor-pointer">
           {props.titletwo}
         </Link>
         <Link to={"/form"} className="hover:font-bold cursor-pointer">
