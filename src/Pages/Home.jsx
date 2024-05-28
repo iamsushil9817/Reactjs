@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "../Components/Search";
 import IntroPost from "../Components/IntroPost";
 // import Blogs from "../Components/Blogs";
 // import Footer from "../Components/Footer";
-import Form from "../Components/Form";
 
 const Home = () => {
+  const [getvalue, setGetvalue] = useState("");
+  const getdata = (data) => {
+    setGetvalue(data);
+  };
+
   return (
     <div>
-      <Search />
-      <IntroPost />
-      <Form />
+      <Search getdata={getdata} />
+      <IntroPost getvalue={getvalue} />
       {/* <Blogs />
       <Footer /> */}
     </div>
