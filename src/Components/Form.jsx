@@ -25,16 +25,16 @@ const Form = () => {
     const json = await res.json();
     console.log(json);
   };
-  createPost();
 
   const handlechange = (e) => {
     const Data = { ...data };
     Data[e.target.id] = e.target.value;
     setData(Data);
-    console.log(Data);
+    // console.log(Data);
   };
   const handlesubmit = (e) => {
     e.preventDefault();
+    createPost();
   };
 
   return (
@@ -92,7 +92,7 @@ const Form = () => {
           className="border-solid border-green-600 bg-slate-300 shadow text-black rounded-md"
         />
       </div>
-      <button className=" bg-blue-600 text-white p-2 rounded-md hover:bg-blue-500 w-[10%] mb-2 ml-6">
+      <button className=" bg-blue-600 text-white p-2 rounded-md hover:bg-blue-500 w-[15%] mb-2 ml-6">
         submit
       </button>
     </form>

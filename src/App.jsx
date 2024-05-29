@@ -10,6 +10,8 @@ import Header from "./Components/Header";
 import Form from "./Components/Form";
 import Category from "./Pages/Category";
 import Sign from "./Pages/Sign";
+import Products from "./Pages/Products";
+import Fields from "./Pages/Fields";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,7 +19,13 @@ function App() {
   return (
     <>
       <div className="mt-5 mb-3">
-        <Header titleone="Home" titletwo="SignIn" titlethree="Form" />
+        <Header
+          titleone="Home"
+          titletwo="SignIn"
+          titlethree="Form"
+          titlefour="Products"
+          titlefive="Fields"
+        />
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -25,6 +33,8 @@ function App() {
         <Route path="/sign" element={<Sign />}></Route>
         <Route path="/form" element={<Form />}></Route>
         <Route path="/category" element={<Category />}></Route>
+        <Route path="/product" element={<Products />}></Route>
+        <Route path="/field" element={<Fields />}></Route>
       </Routes>
     </>
   );

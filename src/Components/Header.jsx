@@ -16,6 +16,12 @@ const Header = (props) => {
         <Link to={"/form"} className="hover:font-bold cursor-pointer">
           {props.titlethree}
         </Link>
+        <Link to={"/product"} className="hover:font-bold cursor-pointer">
+          {props.titlefour}
+        </Link>
+        <Link to={"/field"} className="hover:font-bold cursor-pointer">
+          {props.titlefive}
+        </Link>
       </ul>
       <button className="bg-red-500 rounded-full text-white flex p-2 items-center mr-3">
         Subscribe <TbBrandYoutubeFilled className="ml-3" />

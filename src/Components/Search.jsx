@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Search = (props) => {
   const [text, setText] = useState("");
+
   const handlechange = (e) => {
     setText(e.target.value);
     props.getdata(e.target.value);
