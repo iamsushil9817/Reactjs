@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Sign = () => {
+  const navigate = useNavigate();
   const [login, setLogin] = useState({
     username: "",
     password: "",
   });
+  // const [error, setError] = useState(null);
   const loginapi = async () => {
     try {
       const res = await fetch("https://dummyjson.com/auth/login", {
@@ -17,8 +20,18 @@ const Sign = () => {
       });
       const json = await res.json();
       console.log(json);
-    } catch (error) {
-      console.log(error);
+      console.log(res.status);
+
+      if (res.status === 200) {
+        // also we can use (json.success)
+        navigate("/");
+      } else {
+        alert("login failed ,please enter username and password");
+      }
+
+      // setError(null);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -31,6 +44,13 @@ const Sign = () => {
   const handleloginsubmit = (e) => {
     e.preventDefault();
     loginapi();
+    if (!login.username && !login.password) {
+      return alert("please enter the username and password ");
+    } else if (!login.username) {
+      return alert("please enter the username");
+    } else if (!login.password) {
+      return alert("please enter the password");
+    }
   };
 
   return (
