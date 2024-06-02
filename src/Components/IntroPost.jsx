@@ -11,7 +11,7 @@ const IntroPost = ({ getvalue }) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      setPosts(data);
+      setPosts(data.products);
       // setFilteredPosts(data);
       setLoading(false);
     } catch (error) {

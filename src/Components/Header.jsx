@@ -1,8 +1,15 @@
 import React from "react";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = (props) => {
+  const navigate = useNavigate();
+  const handlelogout = () => {
+    localStorage.removeItem("bearerToken");
+    navigate("/sign");
+  };
+  const Token = JSON.parse(localStorage.getItem("bearerToken"));
   return (
     <div className="flex justify-between items-center ">
       <h1 className="text-2xl font-bold">Logo</h1>
@@ -10,9 +17,7 @@ const Header = (props) => {
         <Link to={"/"} className="hover:font-bold cursor-pointer">
           {props.titleone}
         </Link>
-        <Link to={"/sign"} className="hover:font-bold cursor-pointer">
-          {props.titletwo}
-        </Link>
+
         <Link to={"/form"} className="hover:font-bold cursor-pointer">
           {props.titlethree}
         </Link>
@@ -22,6 +27,23 @@ const Header = (props) => {
         <Link to={"/field"} className="hover:font-bold cursor-pointer">
           {props.titlefive}
         </Link>
+        <Link to={"/auth"} className="hover:font-bold cursor-pointer">
+          {props.titlesix}
+        </Link>
+        {Token && (
+          <Link to={"/admin"} className="hover:font-bold cursor-pointer">
+            {props.titleseven}
+          </Link>
+        )}
+        {Token ? (
+          <div onClick={handlelogout} className="cursor-pointer">
+            Logout
+          </div>
+        ) : (
+          <Link to={"/sign"} className="hover:font-bold cursor-pointer">
+            {props.titletwo}
+          </Link>
+        )}
       </ul>
       <button className="bg-red-500 rounded-full text-white flex p-2 items-center mr-3">
         Subscribe <TbBrandYoutubeFilled className="ml-3" />

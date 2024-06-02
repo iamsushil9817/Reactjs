@@ -12,6 +12,9 @@ import Category from "./Pages/Category";
 import Sign from "./Pages/Sign";
 import Products from "./Pages/Products";
 import Fields from "./Pages/Fields";
+import User from "./Pages/User";
+import Admin from "./Pages/Admin";
+import Signout from "./Components/Signout";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -25,6 +28,9 @@ function App() {
           titlethree="Form"
           titlefour="Products"
           titlefive="Fields"
+          titlesix="User"
+          titleseven="Admin"
+          titleeight="Logout"
         />
       </div>
       <Routes>
@@ -35,6 +41,9 @@ function App() {
         <Route path="/category" element={<Category />}></Route>
         <Route path="/product" element={<Products />}></Route>
         <Route path="/field" element={<Fields />}></Route>
+        <Route path="/auth" element={<User />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
+        <Route path="/signout" element={<Signout />}></Route>
       </Routes>
     </>
   );

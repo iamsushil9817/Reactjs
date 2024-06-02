@@ -8,6 +8,7 @@ const Form = () => {
     image: "",
     category: "",
   });
+  const [post, setPost] = useState([]);
   const createPost = async () => {
     const res = await fetch("https://fakestoreapi.com/products", {
       method: "POST",
@@ -23,7 +24,8 @@ const Form = () => {
       },
     });
     const json = await res.json();
-    console.log(json);
+    setPost(json);
+    // console.log(json);
   };
 
   const handlechange = (e) => {
