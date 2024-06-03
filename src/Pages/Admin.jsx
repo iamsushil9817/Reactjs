@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useGlobalcontext } from "../context/context";
 
 const Admin = () => {
   const [product, setProduct] = useState([]);

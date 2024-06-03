@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { json, useNavigate } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { useGlobalcontext } from "../context/context";
 
 const Sign = () => {
+  const { setUser, setLname } = useGlobalcontext();
   const [showpass, setShowpass] = useState(false);
   const navigate = useNavigate();
   const [login, setLogin] = useState({
@@ -22,8 +24,11 @@ const Sign = () => {
         }),
       });
       const json = await res.json();
+      setUser(json.username);
+      setLname(json.lastName);
+
       // console.log(json);
-      console.log(res.status);
+      // console.log(res.status);
 
       if (res.status === 200) {
         // also we can use (json.success)

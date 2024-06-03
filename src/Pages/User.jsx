@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useGlobalcontext } from "../context/context";
 
 const User = () => {
   const Getlocalstorageitem = JSON.parse(localStorage.getItem("bearerToken"));
@@ -29,7 +30,8 @@ const User = () => {
         <img className="h-[500px]" src={users.image} />
       </div>
       <h1 className="text-lg">
-        Name:{users.firstName} {users.lastName}
+        Name:{users.firstName}
+        {users.lastName}
       </h1>
       <h1 className="text-lg">University:{users.university}</h1>
     </div>

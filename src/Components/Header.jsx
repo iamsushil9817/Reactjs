@@ -2,8 +2,10 @@ import React from "react";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useGlobalcontext } from "../context/context";
 
 const Header = (props) => {
+  const { user, lname } = useGlobalcontext();
   const navigate = useNavigate();
   const handlelogout = () => {
     localStorage.removeItem("bearerToken");
@@ -43,6 +45,11 @@ const Header = (props) => {
           <Link to={"/sign"} className="hover:font-bold cursor-pointer">
             {props.titletwo}
           </Link>
+        )}
+        {Token && (
+          <div>
+            {user} {lname}{" "}
+          </div>
         )}
       </ul>
       <button className="bg-red-500 rounded-full text-white flex p-2 items-center mr-3">
