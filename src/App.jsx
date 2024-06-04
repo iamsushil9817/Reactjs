@@ -15,6 +15,8 @@ import Fields from "./Pages/Fields";
 import User from "./Pages/User";
 import Admin from "./Pages/Admin";
 import Signout from "./Components/Signout";
+import Validate from "./Pages/Validate";
+import Proddetails from "./Pages/Proddetails";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -44,6 +46,8 @@ function App() {
         <Route path="/auth" element={<User />}></Route>
         <Route path="/admin" element={<Admin />}></Route>
         <Route path="/signout" element={<Signout />}></Route>
+        <Route path="/validate" element={<Validate />}></Route>
+        <Route path="/proddetails/:id" element={<Proddetails />}></Route>
       </Routes>
     </>
   );

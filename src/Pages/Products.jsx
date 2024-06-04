@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Loading from "../Components/Loading";
 
 const Products = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -22,18 +25,32 @@ const Products = () => {
     fetchedapi();
   }, []);
   if (loading) {
-    return <p className="text-2xl">Loading...</p>;
+    return <Loading />;
   }
 
   return (
     <div className="mx-auto pb-4 w-[88%]">
       <h1 className=" font-bold ">Products...</h1>
       {error && <p> Error :{error}</p>}
-      <div className=" grid grid-cols-3 gap-4">
+      <div className=" grid grid-cols-3 gap-4  ">
         {product.map((prod) => {
           return (
-            <div className=" p-4  bg-slate-500 rounded-md " key={prod.id}>
-              <h1 className="text-white">{prod.title}</h1>
+            <div
+              className="   bg-white shadow-md rounded-lg p-4 border "
+              key={prod.id}
+            >
+              <div className="flex justify-center">
+                <img src={prod.images} className="h-52" />
+              </div>
+              <h1 className=" text-2xl mb-2">{prod.title}</h1>
+              <div>
+                <button
+                  className="bg-blue-600 px-3 py-2 text-white rounded-lg"
+                  onClick={() => navigate(`proddetails/${prod.id}`)}
+                >
+                  More Details...
+                </button>
+              </div>
             </div>
           );
         })}

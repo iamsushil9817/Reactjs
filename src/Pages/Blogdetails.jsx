@@ -18,23 +18,17 @@ const Blogdetails = () => {
     getsingleid();
   }, [id]);
   return (
-    <div className="mx-auto w-[80%] bg-slate-500 rounded-sm text-white ">
+    <div className="mx-auto w-[40%] rounded-sm text-white mt-8  ">
       <div className="p-2">
-        <h1>
-          {" "}
-          <span className="text-2xl"> Title :</span>
-          {one.title}
-        </h1>
-        <h2>
-          {" "}
-          <span className="text-2xl"> Price: </span>
-          {one.price}
-        </h2>
-        <p>
-          {" "}
-          <span className="text-2xl">Desc:</span>
-          {one.description}
-        </p>
+        <div className="flex justify-center ">
+          <img src={one.image} className="h-60" />
+        </div>
+        <div className="mt-2">
+          <h1 className="text-black font-bold text-3xl"> {one.title}.</h1>
+        </div>
+        <div className="mt-2">
+          <p className="text-black text-xl">{one.description}.</p>
+        </div>
       </div>
     </div>
   );

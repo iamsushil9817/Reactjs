@@ -48,9 +48,12 @@ const Header = (props) => {
         )}
         {Token && (
           <div>
-            {user} {lname}{" "}
+            {user} {lname}
           </div>
         )}
+        <Link to={"/validate"} className="hover:font-bold cursor-pointer">
+          Validate
+        </Link>
       </ul>
       <button className="bg-red-500 rounded-full text-white flex p-2 items-center mr-3">
         Subscribe <TbBrandYoutubeFilled className="ml-3" />
