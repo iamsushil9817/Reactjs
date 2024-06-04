@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
 
 const Products = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [product, setProduct] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -43,14 +43,14 @@ const Products = () => {
                 <img src={prod.images} className="h-52" />
               </div>
               <h1 className=" text-2xl mb-2">{prod.title}</h1>
-              <div>
+              <Link to={`/proddetails/${prod.id}`}>
                 <button
                   className="bg-blue-600 px-3 py-2 text-white rounded-lg"
-                  onClick={() => navigate(`proddetails/${prod.id}`)}
+                  // onClick={() => navigate(`/proddetails/${prod.id}`)}
                 >
                   More Details...
                 </button>
-              </div>
+              </Link>
             </div>
           );
         })}
