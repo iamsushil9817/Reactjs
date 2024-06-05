@@ -19,7 +19,7 @@ const Validate = () => {
     });
 
   return (
-    <div className="container mx-auto w-[50%] bg-slate-600 rounded-md p-6">
+    <div className="container mx-auto w-[60%] bg-slate-600 rounded-md p-6">
       <form className="flex flex-col items-center" onSubmit={handleSubmit}>
         <div className="mb-2">
           <div className="text-white">
@@ -32,7 +32,7 @@ const Validate = () => {
               name="name"
               autoComplete="off"
               placeholder="Enter your Name"
-              className="rounded-md px-2 py-1 border-solid mt-1"
+              className="rounded-md px-2 py-1 border-solid mt-1 w-72"
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -53,7 +53,7 @@ const Validate = () => {
               name="email"
               autoComplete="off"
               placeholder="Enter your email"
-              className="rounded-md px-2 py-1 border-solid mt-1 "
+              className="rounded-md px-2 py-1 border-solid mt-1 w-72 "
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -74,7 +74,7 @@ const Validate = () => {
               name="password"
               autoComplete="off"
               placeholder="Enter your password"
-              className="rounded-md px-2 py-1 border-solid mt-1"
+              className="rounded-md px-2 py-1 border-solid mt-1 w-72 "
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -95,7 +95,7 @@ const Validate = () => {
               name="confirmpassword"
               autoComplete="off"
               placeholder="Enter your password"
-              className="rounded-md px-2 py-1 border-solid mt-1"
+              className="rounded-md px-2 py-1 border-solid mt-1 w-72 "
               value={values.confirmpassword}
               onChange={handleChange}
               onBlur={handleBlur}

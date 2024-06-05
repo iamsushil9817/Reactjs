@@ -1,6 +1,6 @@
 import React from "react";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useGlobalcontext } from "../context/context";
 
@@ -16,44 +16,102 @@ const Header = (props) => {
     <div className="flex justify-between items-center ">
       <h1 className="text-2xl font-bold">Logo</h1>
       <ul className="flex gap-4 md:gap-14">
-        <Link to={"/"} className="hover:font-bold cursor-pointer">
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            `hover:font-bold cursor-pointer ${
+              isActive ? "text-orange-600 font-bold" : "null"
+            }`
+          }
+        >
           {props.titleone}
-        </Link>
+        </NavLink>
 
-        <Link to={"/form"} className="hover:font-bold cursor-pointer">
+        <NavLink
+          to={"/form"}
+          className={({ isActive }) =>
+            `hover:font-bold cursor-pointer ${
+              isActive ? "text-orange-600 font-bold" : "null"
+            }`
+          }
+        >
           {props.titlethree}
-        </Link>
-        <Link to={"/product"} className="hover:font-bold cursor-pointer">
+        </NavLink>
+        <NavLink
+          to={"/product"}
+          className={({ isActive }) =>
+            `hover:font-bold cursor-pointer ${
+              isActive ? "text-orange-600 font-bold" : "null"
+            }`
+          }
+        >
           {props.titlefour}
-        </Link>
-        <Link to={"/field"} className="hover:font-bold cursor-pointer">
+        </NavLink>
+        <NavLink
+          to={"/field"}
+          className={({ isActive }) =>
+            `hover:font-bold cursor-pointer ${
+              isActive ? "text-orange-600 font-bold" : "null"
+            }`
+          }
+        >
           {props.titlefive}
-        </Link>
-        <Link to={"/auth"} className="hover:font-bold cursor-pointer">
-          {props.titlesix}
-        </Link>
+        </NavLink>
         {Token && (
-          <Link to={"/admin"} className="hover:font-bold cursor-pointer">
-            {props.titleseven}
-          </Link>
+          <NavLink
+            to={"/auth"}
+            className={({ isActive }) =>
+              `hover:font-bold cursor-pointer ${
+                isActive ? "text-orange-600 font-bold" : "null"
+              }`
+            }
+          >
+            {props.titlesix}
+          </NavLink>
         )}
+        {Token && (
+          <NavLink
+            to={"/admin"}
+            className={({ isActive }) =>
+              `hover:font-bold cursor-pointer ${
+                isActive ? "text-orange-600 font-bold" : "null"
+              }`
+            }
+          >
+            {props.titleseven}
+          </NavLink>
+        )}
+        <NavLink
+          to={"/validate"}
+          className={({ isActive }) =>
+            `hover:font-bold cursor-pointer ${
+              isActive ? "text-orange-600 font-bold" : "null"
+            }`
+          }
+        >
+          Validate
+        </NavLink>
         {Token ? (
           <div onClick={handlelogout} className="cursor-pointer">
             Logout
           </div>
         ) : (
-          <Link to={"/sign"} className="hover:font-bold cursor-pointer">
+          <NavLink
+            to={"/sign"}
+            className={({ isActive }) =>
+              `hover:font-bold cursor-pointer ${
+                isActive ? "text-orange-600 font-bold" : "null"
+              }`
+            }
+          >
             {props.titletwo}
-          </Link>
+          </NavLink>
         )}
         {Token && (
           <div>
             {user} {lname}
           </div>
         )}
-        <Link to={"/validate"} className="hover:font-bold cursor-pointer">
-          Validate
-        </Link>
       </ul>
       <button className="bg-red-500 rounded-full text-white flex p-2 items-center mr-3">
         Subscribe <TbBrandYoutubeFilled className="ml-3" />

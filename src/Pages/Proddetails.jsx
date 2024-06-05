@@ -17,6 +17,7 @@ const Proddetails = () => {
     };
     updatebypid();
   }, [id]);
+  console.log(pone);
 
   return (
     <div className="mx-auto w-[50%] ">
@@ -24,9 +25,9 @@ const Proddetails = () => {
         <div className="flex justify-center">
           <img src={pone.images} className="h-64" />
         </div>
-        <h1 className="text-3xl">{pone.title}</h1>
+        <h1 className="text-3xl">{pone.title}.</h1>
         <h1 className="text-3xl">Price:${pone.price}</h1>
-        <p className="text-xl">{pone.description}</p>
+        <p className="text-xl">{pone.description}.</p>
       </div>
     </div>
   );
