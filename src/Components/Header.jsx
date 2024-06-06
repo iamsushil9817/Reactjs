@@ -19,7 +19,7 @@ const Header = (props) => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            `hover:font-bold cursor-pointer ${
+            `hover:font-bold hover:text-orange-500 cursor-pointer ${
               isActive ? "text-orange-600 font-bold" : "null"
             }`
           }
@@ -30,7 +30,7 @@ const Header = (props) => {
         <NavLink
           to={"/form"}
           className={({ isActive }) =>
-            `hover:font-bold cursor-pointer ${
+            `hover:font-bold  hover:text-orange-500 cursor-pointer ${
               isActive ? "text-orange-600 font-bold" : "null"
             }`
           }
@@ -40,7 +40,7 @@ const Header = (props) => {
         <NavLink
           to={"/product"}
           className={({ isActive }) =>
-            `hover:font-bold cursor-pointer ${
+            `hover:font-bold  hover:text-orange-500 cursor-pointer ${
               isActive ? "text-orange-600 font-bold" : "null"
             }`
           }
@@ -50,7 +50,7 @@ const Header = (props) => {
         <NavLink
           to={"/field"}
           className={({ isActive }) =>
-            `hover:font-bold cursor-pointer ${
+            `hover:font-bold  hover:text-orange-500 cursor-pointer ${
               isActive ? "text-orange-600 font-bold" : "null"
             }`
           }
@@ -61,7 +61,7 @@ const Header = (props) => {
           <NavLink
             to={"/auth"}
             className={({ isActive }) =>
-              `hover:font-bold cursor-pointer ${
+              `hover:font-bold  hover:text-orange-500 cursor-pointer ${
                 isActive ? "text-orange-600 font-bold" : "null"
               }`
             }
@@ -73,7 +73,7 @@ const Header = (props) => {
           <NavLink
             to={"/admin"}
             className={({ isActive }) =>
-              `hover:font-bold cursor-pointer ${
+              `hover:font-bold  hover:text-orange-500 cursor-pointer ${
                 isActive ? "text-orange-600 font-bold" : "null"
               }`
             }
@@ -84,7 +84,7 @@ const Header = (props) => {
         <NavLink
           to={"/validate"}
           className={({ isActive }) =>
-            `hover:font-bold cursor-pointer ${
+            `hover:font-bold  hover:text-orange-500 cursor-pointer ${
               isActive ? "text-orange-600 font-bold" : "null"
             }`
           }
@@ -99,7 +99,7 @@ const Header = (props) => {
           <NavLink
             to={"/sign"}
             className={({ isActive }) =>
-              `hover:font-bold cursor-pointer ${
+              `hover:font-bold  hover:text-orange-500 cursor-pointer ${
                 isActive ? "text-orange-600 font-bold" : "null"
               }`
             }

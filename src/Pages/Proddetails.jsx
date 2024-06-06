@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../Components/Loading";
 
 const Proddetails = () => {
   const { id } = useParams();
   const [pone, setPone] = useState({});
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const updatebypid = async () => {
       try {
@@ -11,13 +13,17 @@ const Proddetails = () => {
         const json = await res.json();
         // console.log(json);
         setPone(json);
+        setLoading(false);
       } catch (error) {
         console.log(error);
+        setLoading(false);
       }
     };
     updatebypid();
   }, [id]);
-  console.log(pone);
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="mx-auto w-[50%] ">

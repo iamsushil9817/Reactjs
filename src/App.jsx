@@ -41,14 +41,13 @@ function App() {
         <Route path="/sign" element={<Sign />} />
         <Route path="/form" element={<Form />} />
         <Route path="/category" element={<Category />} />
-        <Route path="/product" element={<Products />}>
-          <Route path="proddetails/:id" element={<Proddetails />} />
-        </Route>
+        <Route path="/product" element={<Products />}></Route>
         <Route path="/field" element={<Fields />} />
         <Route path="/auth" element={<User />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/signout" element={<Signout />} />
         <Route path="/validate" element={<Validate />} />
+        <Route path="/proddetails/:id" element={<Proddetails />} />
       </Routes>
     </>
   );

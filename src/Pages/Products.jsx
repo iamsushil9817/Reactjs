@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../Components/Loading";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 const Products = () => {
   // const navigate = useNavigate();
   const [product, setProduct] = useState([]);
@@ -43,7 +43,7 @@ const Products = () => {
                 <img src={prod.images} className="h-52" />
               </div>
               <h1 className=" text-2xl mb-2">{prod.title}</h1>
-              <Link to={`/product/proddetails/${prod.id}`}>
+              <Link to={`/proddetails/${prod.id}`}>
                 <button
                   className="bg-blue-600 px-3 py-2 text-white rounded-lg"
                   // onClick={() => navigate(`/proddetails/${prod.id}`)}
@@ -55,7 +55,6 @@ const Products = () => {
           );
         })}
       </div>
-      <Outlet />
     </div>
   );
 };
